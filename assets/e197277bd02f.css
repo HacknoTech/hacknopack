@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+#reamaze-widget:hover { opacity: 1; transform: translate3d(0px, -4px, 0px); box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 0px, rgba(0, 0, 0, 0.24) 0px 4px 10px !important; }
+
+#reamaze-widget-label-container { overflow: hidden; }
+
+.rmz-label-text { color: rgb(255, 255, 255); font-family: Nunito, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 58px; }
+
+#reamaze-widget-label { vertical-align: top; display: inline-block; padding-right: 16px; margin-right: 0px; }
+
+#reamaze-widget-icon img { width: 100%; height: 100%; background: transparent; opacity: 1; display: inline-block; }
+
+#reamaze-widget #reamaze-widget-icon { display: block; overflow: hidden; width: 58px; height: 58px; border-radius: 58px; }
+
+#reamaze-widget.rmz-static { max-width: calc(-40px + 100vw); display: flex; }
+
+#reamaze-widget.rmz-custom.rmz-static #reamaze-widget-icon { margin-right: 10px; }
+
+#reamaze-widget.rmz-static #reamaze-widget-icon { display: inline-block; border-radius: 58px; flex-shrink: 0; }
+
+#reamaze-widget.rmz-static .rmz-label-text { white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+#reamaze-widget.rmz-static #rmz-widget-label { display: block; }

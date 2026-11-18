@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.airo-tooltip-root { position: relative; display: inline-flex; }
+
+.airo-tooltip-bubble { position: fixed; transform: translateX(-50%) translateY(calc(-100% - 5px)); z-index: 10001; padding: 8px 12px; background: rgb(26, 26, 26); color: white; font-size: 13px; font-weight: 500; font-family: system-ui, sans-serif; border-radius: 8px; white-space: nowrap; pointer-events: none; animation: 0.15s ease-out 0s 1 normal none running airoTooltipFadeInUp; }
+
+.airo-tooltip-bubble[data-placement="below"] { transform: translateX(-50%) translateY(5px); animation: 0.15s ease-out 0s 1 normal none running airoTooltipFadeInDown; }
+
+.airo-tooltip-bubble[data-exiting] { animation: airoTooltipFadeOut var(--tooltip-exit-duration, 0.12s) ease-in forwards; }
+
+.airo-tooltip-arrow { position: absolute; left: var(--airo-tooltip-arrow-left, 50%); bottom: -6px; transform: translateX(-50%); width: 0px; height: 0px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid rgb(26, 26, 26); }
+
+.airo-tooltip-bubble[data-placement="below"] .airo-tooltip-arrow { bottom: auto; top: -6px; border-top-width: medium; border-top-style: none; border-top-color: currentcolor; border-bottom: 6px solid rgb(26, 26, 26); }
+
+@keyframes airoTooltipFadeInUp { 
+  0% { opacity: 0; transform: translateX(-50%) translateY(calc(-100% + 8px)); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(calc(-100% - 5px)); }
+}
+
+@keyframes airoTooltipFadeInDown { 
+  0% { opacity: 0; transform: translateX(-50%) translateY(-3px); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(5px); }
+}
+
+@keyframes airoTooltipFadeOut { 
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .airo-tooltip-bubble, .airo-tooltip-bubble[data-placement="below"] { animation: auto ease 0s 1 normal none running none; }
+}
